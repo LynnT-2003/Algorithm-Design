@@ -1,6 +1,7 @@
 prices = list(map(int, input().split()))
 n = len(prices)
 total = 0
+counter = 0
 
 def oneTime(l):
     print("Cutting one time:")
@@ -9,6 +10,8 @@ def oneTime(l):
 
 def maxRev(l):
     global total
+    global counter 
+    counter += 1
     maximumRevenue = float('-inf')
     if l == 0:
         return 0
@@ -20,4 +23,4 @@ def maxRev(l):
     return maximumRevenue
 
 oneTime(n)
-print(f"Maximum Revenue: {maxRev(n)}")
+print(f"Maximum Revenue: {maxRev(n)}, {counter} calls")
