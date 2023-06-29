@@ -1,9 +1,10 @@
 coins = list(map(int, input().split()))
 change = int(input())
-calls = 0
+counter = 0
 
 def mincoin(v, coins):
-    global calls
+    global counter
+    counter += 1
     minCoins = float('inf')
     if v == 0:
         return 0
@@ -12,11 +13,9 @@ def mincoin(v, coins):
         remaining = v - coin
         if remaining >= 0:
             numCoins = mincoin(remaining, coins) + 1
-            calls += 1
             if numCoins < minCoins:
                 minCoins = numCoins
-    print(calls)
     return minCoins
 
 result = mincoin(change, coins)
-print(result)
+print(f"{result}, {counter} calls")
