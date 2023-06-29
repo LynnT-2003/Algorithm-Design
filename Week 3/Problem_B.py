@@ -20,4 +20,4 @@ def maxRev(l):
     return maximumRevenue
 
 oneTime(n)
-print(maxRev(n))
+print(f"Maximum Revenue: {maxRev(n)}")
