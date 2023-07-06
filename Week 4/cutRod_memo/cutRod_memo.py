@@ -19,17 +19,16 @@ def maxRev(l):
         return memo[l]
 
     if l == 0:
-        maximumRevenue = 0
-    else:
-        for i in range(1, l+1):
-            remaining = l - i
-            total = prices[i-1] + maxRev(remaining)
-            maximumRevenue = max(maximumRevenue, total)
-
-        counter += 1    
-        calls[l] += 1
-
+        return 0
+    
+    for i in range(1, l+1):
+        remaining = l - i
+        total = prices[i-1] + maxRev(remaining)
+        maximumRevenue = max(maximumRevenue, total)
     memo[l] = maximumRevenue
+    
+    counter += 1    
+    calls[l] += 1
     return maximumRevenue
 
 print(f"Maximum Revenue: {maxRev(n)}, {counter} calls")
