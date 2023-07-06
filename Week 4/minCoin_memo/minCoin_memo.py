@@ -6,7 +6,6 @@ v = int(input())
 counter = 0
 calls = [0] * (v+1)
 memo = [None] * (v+1)
-calls = [0] * (v+1)
 
 def mincoin(v):
     global counter
