@@ -14,10 +14,4 @@ def max_profit(predicted_changes):
 
     return max_profit
 
-<<<<<<< HEAD
 print(max_profit(predicted_changes)) 
-=======
-# Example usage:
-print(max_profit(predicted_changes))  # Output: 12
-
->>>>>>> 15c68257fbbd80777df0646f6b1e62dbb88ec2e2
