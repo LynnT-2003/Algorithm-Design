@@ -28,6 +28,10 @@ def mincoin(v):
     calls[v] += 1
     return minCoins
 
-result = mincoin(v)
-print(f"{result}, {counter} calls")
-print("Number of calls for each minCoin():", calls[1:])
+for i in range(v + 1) :
+    mincoin(i)
+print(memo[v])
+
+# result = mincoin(v)
+# print(f"{counter} calls")
+# print("Number of calls for each minCoin():", calls[1:])
