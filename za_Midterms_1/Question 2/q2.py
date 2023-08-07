@@ -1,16 +1,14 @@
 def can_complete_circuit(Petrol, Distance):
-    surplus, start = 0, 0
+    remaining, starting_station = 0, 0
 
     for i in range(len(Petrol)):
-        surplus += Petrol[i] - Distance[i]
+        remaining += Petrol[i] - Distance[i]
 
-        if surplus < 0:
-            surplus = 0
-            start = i + 1
+        if remaining < 0:
+            remaining = 0
+            starting_station = i + 1
 
-    return start    
-
-    # return start if surplus >= 0 else -1
+    return starting_station    
 
 # Input
 N = int(input())
