@@ -1,11 +1,10 @@
-# Fibonacci Sequence
+def Fibonacci(n):
+    a = [None for _ in range(n+2)]
+    a[0], a[1] = 1, 1
+    for i in range(2, n+2):
+        a[i] = a[i-1] + a[i-2]
 
-def fibonacci(n) :  
-    result = [1,1]
-    for i in range(len(result), n+2):
-        num = result[i-1] + result[i-2]
-        result.append(num)
-    print(result[-1])
+    print(a[n+1])
 
 n = int(input())
-fibonacci(n)
+Fibonacci(n)

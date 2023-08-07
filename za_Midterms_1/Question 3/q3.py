@@ -1,6 +1,6 @@
 import sys
 import time
-sys.setrecursionlimit(10000)
+sys.setrecursionlimit(99999)
 
 lengths = list(map(int,input().split()))
 target = int(input())
@@ -8,33 +8,49 @@ numTiles = 0
 
 memo = [-1] * (target + 1)
 
-def minTile(v):
+def minTile(L):
 
     minTiles = sys.maxsize
     
-    if v <= 0:
+    if L <= 0:
         return 0
     
-    # Check if the result is already memoized
-    if memo[v] != -1:
-        return memo[v]
+    # Check for memoization
+    if memo[L] != -1:
+        return memo[L]
     
+    # Main logic
     else:
         for length in lengths:
-            remaining = v - length
+            remaining = L - length
             # print(f"length {length}, remaining {remaining}")
             if remaining >= 0:
                 numTiles = minTile(remaining) + 1
                 if numTiles < minTiles:
                     minTiles = numTiles
     
-        # Memoize the result
-        memo[v] = minTiles
+        # Record memoization
+        memo[L] = minTiles
 
         return(minTiles)
     
-# Use a loop to populate the memo list
+# Dynamic Programming
 for i in range(target, -1, -1):
-    minTile(i)
+    (minTile(i))
+print (memo[target])
 
-print(minTile(target))
+# for i in range(target):
+#     minTile(i)
+# print(memo[target])
+
+
+
+
+
+
+
+
+
+
+# for i in range(target, -1, -1):
+#     minTile(i)
