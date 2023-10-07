@@ -1,8 +1,12 @@
 import time
-N = int(input())
+
+# Input
+N = int(input("Enter the number of activities: "))
 Activities = []
+print("Enter activity details (start_time finish_time):")
 for _ in range(N):
-    Activities.append(tuple(map(int,input().split())))
+    start, finish = map(int, input().split())
+    Activities.append((start, finish))
 
 
 def ActivitySelection(n,Activities):
