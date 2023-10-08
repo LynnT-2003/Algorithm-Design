@@ -19,28 +19,3 @@ class DisjointSets:
             self.p[b] = a
             if self.rank[a] == self.rank[b]:
                 self.rank[a] += 1
-
-def Kruskal(V, Edges):
-    Edges = sorted(Edges, key=lambda x: x[2])
-
-    # Create Disjoint Set
-    D = DisjointSets(V)
-
-    W = 0
-    edgecount = 0
-
-    for u, v, w in Edges:
-        if D.findset(u) != D.findset(v):
-            D.union(u, v)
-            W += w
-            edgecount += 1
-
-    print(W)
-
-V, E = 4, 4
-Edges = [(0, 3, 15),
-(1, 2, 20),
-(1, 3, 24),
-(2, 3, 17)]
-
-Kruskal(V, Edges)
