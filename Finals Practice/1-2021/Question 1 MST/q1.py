@@ -37,10 +37,13 @@ def Kruskal(V, Edges):
 
     print(W)
 
-V, E = 4, 4
-Edges = [(0, 3, 15),
-(1, 2, 20),
-(1, 3, 24),
-(2, 3, 17)]
+V, E = map(int, input().split())
+Edges = [tuple(map(int, input().split())) for _ in range(E)]
+
+# V, E = 4, 4
+# Edges = [(0, 3, 15),
+# (1, 2, 20),
+# (1, 3, 24),
+# (2, 3, 17)]
 
 Kruskal(V, Edges)
